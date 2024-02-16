@@ -38,7 +38,7 @@ public class DispositivoService {
     }
     public Dispositivo findByIdAndUpdate(int id, Dispositivo body) {
             Dispositivo found = this.findById(id);
-            found.setStato(StatoDispositivo.valueOf("DISPONIBILE").toString());
+            found.setStato(StatoDispositivo.valueOf("DISPONIBILEE").toString());
         return dispositivoRepository.save(found);
     }
 
