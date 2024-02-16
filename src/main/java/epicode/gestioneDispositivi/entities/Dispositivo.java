@@ -1,11 +1,7 @@
 package epicode.gestioneDispositivi.entities;
 
-import epicode.gestioneDispositivi.Enum.StatoDispositivo;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
@@ -17,10 +13,15 @@ public class Dispositivo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String type;
-    @Enumerated(EnumType.STRING)
-    private StatoDispositivo statoDispositivo;
+    private String stato;
 
     @ManyToOne
     @JoinColumn(name = "dipendente_id")
     private Dipendente dipendente;
+
+    public Dispositivo(String type, String stato) {
+        this.type = type;
+        this.stato = stato;
+
+    }
 }

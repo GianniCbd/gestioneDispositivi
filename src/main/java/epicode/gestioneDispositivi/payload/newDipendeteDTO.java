@@ -1,10 +1,13 @@
 package epicode.gestioneDispositivi.payload;
 
+import epicode.gestioneDispositivi.entities.Dispositivo;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,5 +25,10 @@ public class newDipendeteDTO {
     @NotEmpty(message = "Inserire minimo 4 caratteri")
     @Email(message = "email non valida")
     private String email;
+    List<Dispositivo> dispositivo;
+
+
+    List<String> errorsList;
+
 }
 

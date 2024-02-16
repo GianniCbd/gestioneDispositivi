@@ -28,7 +28,6 @@ public class DipendenteService {
     //Post
   public Dipendente save(newDipendeteDTO newDipendeteDTO){
         Dipendente dipendente = new Dipendente(newDipendeteDTO.getUsername(),newDipendeteDTO.getName(), newDipendeteDTO.getLastname(), newDipendeteDTO.getEmail(),"mmm");
-      System.out.println(newDipendeteDTO.getUsername());
         return dipendenteRepository.save(dipendente);
   }
 
