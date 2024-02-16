@@ -28,13 +28,20 @@ public class dispositivoController {
     }
 
     @GetMapping("")
-    public Page<Dispositivo> getAllUser(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size, @RequestParam(defaultValue = "id") String orderBy){
-        return dispositivoService.getAllUser(page, size, orderBy);
+    public Page<Dispositivo> getDispositivo(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size, @RequestParam(defaultValue = "id") String orderBy){
+        return dispositivoService.getDispositivo(page, size, orderBy);
     }
 
+    @GetMapping("/{dispositivoId}")
+    public Dispositivo findById(@PathVariable int dispositivoId) {
+        return dispositivoService.findById(dispositivoId);
+    }
+
+
+
     @PutMapping("/{dispositivoID}")
-    public Dispositivo findByIdAndUpdate(@PathVariable int dispositivoId, @RequestBody Dispositivo body) {
-        return dispositivoService.findByIdAndUpdate(dispositivoId, body);
+    public Dispositivo findByIdAndUpdate(@PathVariable int dispositivoId) {
+        return dispositivoService.findByIdAndUpdate(dispositivoId);
     }
 
 

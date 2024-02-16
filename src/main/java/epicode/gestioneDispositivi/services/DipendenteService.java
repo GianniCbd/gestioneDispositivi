@@ -51,11 +51,6 @@ public class DipendenteService {
         return dipendenteRepository.save(found);
     }
 
-//    public Dipendente uploadAvatar(int id, MultipartFile file) throws IOException {
-//        Dipendente found = this.findById(id);
-//        String avatarURL = (String) cloudinaryUploader.uploader().upload(file.getBytes(), ObjectUtils.emptyMap()).get("url");
-//        found.setAvatar(avatarURL);
-//        return dipendenteRepository.save(found);
-//    }
+
 
 }

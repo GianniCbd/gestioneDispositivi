@@ -18,12 +18,9 @@ public class DispositivoService {
 @Autowired
     DispositivoRepository dispositivoRepository;
 
-@Autowired
-    DipendenteService dipendenteService;
-
 
     //Get
-    public Page<Dispositivo> getAllUser(int page, int size, String orderBy){
+    public Page<Dispositivo> getDispositivo(int page, int size, String orderBy){
         Pageable pageable = PageRequest.of(page, size, Sort.by(orderBy));
         return dispositivoRepository.findAll(pageable);
     }
@@ -36,9 +33,10 @@ public class DispositivoService {
     public Dispositivo findById(long id) {
         return dispositivoRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
     }
-    public Dispositivo findByIdAndUpdate(int id, Dispositivo body) {
+    public Dispositivo findByIdAndUpdate(int id) {
             Dispositivo found = this.findById(id);
-            found.setStato(StatoDispositivo.valueOf("DISPONIBILEE").toString());
+            found.setStato(StatoDispositivo.valueOf("DISPONIBILE").toString());
+         ;
         return dispositivoRepository.save(found);
     }
 
