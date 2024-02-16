@@ -40,6 +40,7 @@ public class DispositivoService {
         return dispositivoRepository.save(found);
     }
 
+//DELETE
     public void findByIdAndDelete(int id) {
         Dispositivo found = this.findById(id);
         dispositivoRepository.delete(found);
