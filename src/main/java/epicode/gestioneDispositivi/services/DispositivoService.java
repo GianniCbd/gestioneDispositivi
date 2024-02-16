@@ -30,7 +30,7 @@ public class DispositivoService {
 
 //    Post
     public Dispositivo save(newDispositivoDTO newDispositivoDTO){
-        Dispositivo dispositivo = new Dispositivo(newDispositivoDTO.getType(), StatoDispositivo.valueOf("DISPONIBILE").toString());
+        Dispositivo dispositivo = new Dispositivo(newDispositivoDTO.getType(), StatoDispositivo.valueOf("DISPONIBILEE").toString());
         return dispositivoRepository.save(dispositivo);
     }
     public Dispositivo findById(long id) {
@@ -45,6 +45,7 @@ public class DispositivoService {
     public void findByIdAndDelete(int id) {
         Dispositivo found = this.findById(id);
         dispositivoRepository.delete(found);
+
     }
 
 
